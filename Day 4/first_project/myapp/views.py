@@ -9,8 +9,5 @@ def index(request):
     return render(request,'index.html',context)
 
 def counter(request):
-    feature1=Features()
-    feature1.id=0
-    feature1.name="Aniket"
-    feature1.detail="Hobby=Skating and skatching"
-    return render(request,'counter.html',{'feature':feature1})
+    feature=Features.objects.all()
+    return render(request,'counter.html',{'feature':feature})
