@@ -1,0 +1,21 @@
+<h1>
+    {% if user.is_authenticated%}
+    Welcome {{user.username}}
+    <button>
+    <a href="logout">Logout</a>
+    </button>
+    <br>
+
+    {% for name in names%}
+    <a href="{% url 'post' name %}">{{name}}</a>    
+    <!-- or href=post/{{name}}  <=  this pattern is hard code (not preferable) -->
+    {%endfor%}
+
+    {%else%}
+    welcome user
+    <button>
+    <a href="login">Login</a>
+    </button>
+    {% endif %}
+
+</h1>
