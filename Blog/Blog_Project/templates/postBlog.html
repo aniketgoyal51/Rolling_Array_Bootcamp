@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post blog</title>
+</head>
+<body>
+    <h1>create blog</h1>
+
+    {% for message in messages %}
+    <h3>{{message}}</h3>
+    {% endfor %}
+    
+    <form action="postBlog" method="POST">
+        {% csrf_token %}
+        <h2>Title</h2>
+        <input type="text" name="title">
+        <h2>Body</h2>
+        <input type="text" name="body">
+        <input type="submit">
+    </form>
+</body>
+</html>

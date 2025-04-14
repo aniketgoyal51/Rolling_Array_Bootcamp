@@ -7,7 +7,7 @@
     <br>
 
     {% for name in names%}
-    <a href="{% url 'post' name %}">{{name}}</a>    
+    <a href="{% url 'post' name %}">{{name}}</a><br>
     <!-- or href=post/{{name}}  <=  this pattern is hard code (not preferable) -->
     {%endfor%}
 

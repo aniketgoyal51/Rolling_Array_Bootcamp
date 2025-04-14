@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <h1>Blogs</h1> <br>
+    <a href="/postBlog"> <button>Add blogs</button></a>
+    {% for blog in blogs reversed %}
+    <a href="{% url 'post' blog.id %}">
+        <div style="margin: 10px; background-color: lightgray; padding: 10px;">
+            <h1>{{blog.title}}</h1>
+            <h5>{{blog.time}}</h5>
+            <h3>{{blog.body}}</h3>
+        </div>
+    </a>
+    {% empty %}
+        <p>No blogs found.</p>
+    {% endfor %}
+</body>
+</html>
