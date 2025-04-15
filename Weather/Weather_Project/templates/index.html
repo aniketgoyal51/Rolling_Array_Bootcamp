@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div style="background-color: gray;">
+        <h1 style="color: white;">
+            Weather Detector
+        </h1>
+    </div>
+    <form action="/" method="POST" style="background-color: lightgray; padding: 10px;">
+        {% csrf_token %}
+        <h3> Enter Location </h3>
+        <input type="text" name="location">
+        <input type="submit" value="Submit">
+    </form>
+
+    <h1>Location: {{data.location}}</h1>
+    <h3>Country code: {{data.Country_code}}</h3>
+    <h4>Coordinate: {{data.Coordinate}}</h4>
+    <h4>Temp: {{data.Temp}}</h4>
+    <h4>Pressure: {{data.Pressure}}</h4>
+    <h4>Humidity: {{data.Humidity}}</h4>
+
+</body>
+</html>
